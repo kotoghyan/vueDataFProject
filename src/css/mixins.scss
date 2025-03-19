@@ -1,0 +1,30 @@
+@mixin for-laptop-down {
+  @media screen and (max-width: #{$breakpoint-lg-max}) {
+    @content;
+  }
+}
+
+@mixin for-tablet-down {
+  @media screen and (max-width: #{$breakpoint-md-max}) {
+    @content;
+  }
+}
+
+@mixin for-mobile-down {
+  @media screen and (max-width: #{$breakpoint-sm-max}) {
+    @content;
+  }
+}
+
+@mixin focus-helper-active {
+  background: currentcolor;
+  opacity: 0.15;
+
+  &::before {
+    opacity: 0.1;
+  }
+
+  &::after {
+    opacity: 0.4;
+  }
+}

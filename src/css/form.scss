@@ -1,0 +1,35 @@
+.form-element {
+  @apply tw-w-full tw-border-none tw-bg-transparent tw-placeholder-gray tw-outline-none;
+
+  &:read-only {
+    @apply tw-pointer-events-none;
+  }
+}
+
+.form-field {
+  @apply tw-flex tw-h-12 tw-items-center tw-gap-2.5 tw-rounded-xl tw-border tw-border-solid tw-border-transparent tw-px-5 tw-transition-[background-color,border-color];
+
+  &.is-contained {
+    @apply tw-bg-light-gray;
+  }
+
+  &.is-outlined {
+    @apply tw-border-dark-primary;
+  }
+
+  &.on-hover:hover {
+    @apply tw-border-primary #{!important};
+  }
+
+  &.is-focused {
+    @apply tw-border-primary tw-bg-transparent #{!important};
+  }
+
+  &.is-invalid {
+    @apply tw-border-red tw-bg-transparent #{!important};
+  }
+
+  &.is-disabled {
+    @apply tw-cursor-not-allowed #{!important};
+  }
+}

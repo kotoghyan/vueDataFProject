@@ -1,0 +1,13 @@
+.q-notification.bg-negative {
+  background: var(--light-red) !important;
+  color: var(--red) !important;
+}
+
+.q-notification.bg-positive {
+  background: var(--light-green) !important;
+  color: var(--green) !important;
+}
+
+.q-notification__actions {
+  color: currentcolor !important;
+}

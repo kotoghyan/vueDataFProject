@@ -1,0 +1,70 @@
+{
+  "name": "DataFusion",
+  "version": "0.0.1",
+  "description": "A Dashboard",
+  "productName": "DataFusion",
+  "author": "RAIbrahim360 <raibrahim360@gmail.com>",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.vue ./",
+    "lint:css": "stylelint \"**/*.{scss,vue}\" --id --fix",
+    "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .gitignore",
+    "test": "echo \"No test specified\" && exit 0",
+    "dev": "quasar dev",
+    "build": "quasar build",
+    "lint-staged": "lint-staged",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "**/*.{js,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "**/*.{scss,vue}": [
+      "stylelint --id --fix"
+    ],
+    "**/*.{scss,html,md,json}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.16.11",
+    "@vueuse/core": "^12.0.0",
+    "axios": "^1.2.1",
+    "chart.js": "^4.4.0",
+    "floating-vue": "^2.0.0-beta.24",
+    "lodash-es": "^4.17.21",
+    "moment": "^2.29.4",
+    "pinia": "^2.0.11",
+    "quasar": "^2.16.4",
+    "to": "^0.2.9",
+    "update": "^0.7.4",
+    "vue": "^3.4.29",
+    "vue-chartjs": "^5.2.0",
+    "vue-imask": "^7.6.1",
+    "vue-router": "^4.0.0"
+  },
+  "devDependencies": {
+    "@quasar/app-vite": "^1.9.3",
+    "autoprefixer": "^10.4.2",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-vue": "^9.20.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "postcss": "^8.4.14",
+    "postcss-html": "^1.6.0",
+    "prettier": "^3.0",
+    "prettier-plugin-tailwindcss": "^0.5.7",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "tailwindcss": "^3.4.9"
+  },
+  "engines": {
+    "node": "^18 || ^16 || ^14.19",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  },
+  "packageManager": "yarn@4.0.0+sha512.955259c0370ab8c06d013faa7d5e7addb6914251029695675f54e04c917ea6b092c379ba8d3521556d90b3874e5037759467072f01d2295341ead43cc259f14b"
+}
