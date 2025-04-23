@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import UIcon from 'src/components/ui/UIcon.vue'
+// import UIcon from 'src/components/ui/UIcon.vue'
 
 const menu = [
   {
@@ -38,6 +38,11 @@ const menu = [
         label: 'Events',
         routeName: 'events',
       },
+      {
+        id: 'reportCenter',
+        label: 'Report Center',
+        routeName: 'reportCenter',
+      }
       // {
       //   id: 'modifiers',
       //   label: 'Modifiers',
@@ -55,11 +60,11 @@ const menu = [
       //     label: 'Performance',
       //     routeName: 'dashboard',
       //   },
-      {
-        id: 'reportCenter',
-        label: 'Report Center',
-        routeName: 'reportCenter',
-      },
+      // {
+      //   id: 'reportCenter',
+      //   label: 'Report Center',
+      //   routeName: 'reportCenter',
+      // },
     ],
   },
   // {
@@ -85,6 +90,7 @@ const toggleLinkExpansion = (link) => {
 }
 
 const isHostCleartrust = window.location.hostname === 'cleartrust.data-fusion.io'
+console.log(isHostCleartrust, 'isHostCleartrust')
 </script>
 
 <template>
@@ -103,27 +109,15 @@ const isHostCleartrust = window.location.hostname === 'cleartrust.data-fusion.io
       height: 60px;"
     />
     </div>
-    <div class="tw-mt-[6.25rem] tw-space-y-7.5">
+    <div class="tw-mt-[6.25rem] tw-space-y-7.5 tw-w-full">
       <div v-for="link in menu" :key="link.id">
         <component
           :is="link.sub !== undefined ? 'div' : 'router-link'"
-          class="item tw-flex tw-cursor-pointer tw-items-center tw-rounded-full tw-transition-[background-color] hover:tw-bg-strong-primary"
+          class="item tw-flex tw-cursor-pointer tw-items-center tw-rounded-full tw-transition-[background-color] tw-flex-col"
           :class="{ 'group-hover:tw-bg-strong-primary': expandedLinks.includes(link.id) }"
           :to="{ name: link.routeName }"
           @click="toggleLinkExpansion(link)"
         >
-          <div class="icon-wrap">
-            <UIcon class="tw-text-[2rem]" :name="link.icon" />
-          </div>
-          <p class="tw-ml-[--label-pl] tw-mr-[2.625rem]">{{ link.label }}</p>
-          <UIcon
-            v-if="link.sub !== undefined"
-            class="tw-ml-auto tw-mr-[0.875rem] tw-text-[1.5rem] tw-transition-[transform]"
-            :class="{ 'tw-rotate-180': expandedLinks.includes(link.id) }"
-            name="angle-down"
-          />
-        </component>
-        <div v-if="expandedLinks.includes(link.id)" class="links">
           <router-link
             v-for="sublink in link.sub"
             :key="sublink.id"
@@ -132,6 +126,8 @@ const isHostCleartrust = window.location.hostname === 'cleartrust.data-fusion.io
           >
             {{ sublink.label }}
           </router-link>
+        </component>
+        <div v-if="expandedLinks.includes(link.id)" class="links">
         </div>
       </div>
     </div>

@@ -29,14 +29,17 @@
 //  --transition-timing-function: ease;
 //}
 :root {
-  --primary: #3e2472;
-  --primary-8: rgb(62 36 114 / 8%);
-  --strong-primary: #4a3891;
-  --light-primary: #6a4db0;
-  --lightness-primary: #8a6dbf;
-  --ultralight-primary: #e1d4f3;
-  --dark-primary: #6b4a7f;
-  --dark-blue: #1c1a55;
+  --primary: #3f7bb2;                /* Новый основной */
+  --primary-8: rgb(63 123 178 / 8%); /* Прозрачный фон */
+
+  --strong-primary: #2f6aa2;         /* Более насыщенный */
+  --light-primary: #5b95cb;          /* Светлее основного */
+  --lightness-primary: #8bb9e0;      /* Еще светлее */
+  --ultralight-primary: #dceef8;     /* Почти белый фон */
+
+  --dark-primary: #2e5c84;           /* Темный оттенок нового primary */
+  --dark-blue: #163c63;              /* Глубокий синий, адаптация к палитре */
+
   --dark: #171717;
   --red: #d8001a;
   --green: #38c018;
@@ -49,6 +52,7 @@
   --transition-duration: 0.2s;
   --transition-timing-function: ease;
 }
+
 
 
 //:root {
